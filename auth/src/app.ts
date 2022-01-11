@@ -27,6 +27,10 @@ app.all('*', async (req, res) => {
     throw new NotFoundError();
 });
 
+app.get('/health', (req, res) => {
+    res.status(200).send('Everything works as expected');
+});
+
 app.use(errorHandler);
 
 export { app };
