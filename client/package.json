@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "public": "next start -p 80 -H minuslevel.com"
   },
   "keywords": [],
   "author": "",

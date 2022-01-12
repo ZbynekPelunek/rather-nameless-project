@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(
     cookieSession({
         signed: false,
-        secure: false
+        secure: true
     })
 );
 

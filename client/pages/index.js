@@ -10,13 +10,14 @@ const LandingPage = ({ currentUser, tickets }) => {
 
     return (
         <div>
-            <h1>Welcome {currentUser ? currentUser.email : 'and please sign in or sign up'}</h1>
+            <h1>Welcome</h1>
+            <h3>{currentUser ? currentUser.email : 'please sign in or sign up so I can save your credentials and definitely never use them'}</h3>
         </div>
     )
 };
 
 LandingPage.getInitialProps = async (context, client, currentUser) => {
-    //const { data } = await client.get('http://localhost:3000/api/tickets');
+    //const { data } = await client.get('/api/tickets');
 
     //return { tickets: data };
     return {};
