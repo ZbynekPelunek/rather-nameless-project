@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import cookieSession from 'cookie-session';
 import { errorHandler, NotFoundError } from '@minuslevel/common';
@@ -23,13 +23,15 @@ app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
+app.get('/health', (req: Request, res: Response) => {
+    res.status(200).send('Everything works as expected');
+});
+
 app.all('*', async (req, res) => {
     throw new NotFoundError();
 });
 
-app.get('/health', (req, res) => {
-    res.status(200).send('Everything works as expected');
-});
+
 
 app.use(errorHandler);
 
