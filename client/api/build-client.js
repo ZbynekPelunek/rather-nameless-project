@@ -1,11 +1,24 @@
 import axios from 'axios';
 
+let baseURL;
+
+switch(process.env.NODE_ENV) {
+    case 'development':
+        baseURL = 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local';
+        break;
+    case 'production':
+        baseURL = 'https://www.minuslevel.com';
+        break;
+    default:
+        baseURL = '';
+}
+
 const BuildClient = ({ req }) => {
     if (typeof window === 'undefined') {
         // We are on the server
 
         return axios.create({
-            baseURL: 'https://www.minuslevel.com',
+            baseURL,
             //baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
             headers: req.headers
         });

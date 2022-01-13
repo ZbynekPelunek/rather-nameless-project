@@ -11,7 +11,7 @@ const LandingPage = ({ currentUser, tickets }) => {
     return (
         <div>
             <h1>Welcome</h1>
-            <h3>{currentUser ? currentUser.email : 'please sign in or sign up so I can save your credentials and definitely never use them'}</h3>
+            <h3>{currentUser ? currentUser.email : 'please sign in'}</h3>
         </div>
     )
 };

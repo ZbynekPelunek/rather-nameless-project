@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "start:dev": "NODE_ENV=development next dev",
+    "start:prod": "NODE_ENV=production next start",
     "public": "next start -p 80 -H minuslevel.com"
   },
   "keywords": [],
