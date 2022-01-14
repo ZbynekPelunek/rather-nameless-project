@@ -1,7 +1,7 @@
 import request from 'supertest';
 import { app } from '../../app';
 
-jest.useFakeTimers('legacy');
+//jest.useFakeTimers('legacy');
 
 it('returns a 201 on successful signup', async () => {
     return request(app)

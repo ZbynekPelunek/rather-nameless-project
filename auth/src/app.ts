@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(
     cookieSession({
         signed: false,
-        secure: true
+        secure: false
     })
 );
 
@@ -23,15 +23,9 @@ app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
-app.get('/health', (req: Request, res: Response) => {
-    res.status(200).send('Everything works as expected');
-});
-
-app.all('*', async (req, res) => {
+app.all('*', async (req: Request, res: Response) => {
     throw new NotFoundError();
 });
-
-
 
 app.use(errorHandler);
 

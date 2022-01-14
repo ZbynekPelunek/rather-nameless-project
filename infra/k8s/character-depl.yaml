@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: character-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: character
+  template:
+    metadata:
+      labels:
+        app: character
+    spec:
+      containers:
+      - name: character
+        image: zbynekp/character
+        env:
+          - name: MONGO_URI
+            value: 'mongodb://character-mongo-srv:27017/character'
+          - name: JWT_KEY
+            valueFrom:
+              secretKeyRef:
+                name: jwt-secret
+                key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: character-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: character
+  ports:
+  - name: character
+    port: 3000
+    targetPort: 3000
