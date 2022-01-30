@@ -1,13 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import buildClient from '../api/build-client';
 import Header from '../components/header';
+import Menu from '../components/menu';
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
     return (
         <div>
-            <Header currentUser={currentUser} />
-            <div className="container">
-                <Component currentUser={currentUser} {...pageProps} />
+            <div className="container-fluid">
+                <div className="row">
+                    <Header currentUser={currentUser} />
+                </div>
+                <div className="row">
+                    <div className="col-1"><Menu currentUser={currentUser} /></div>
+                    <div className="col-11">
+                        <div className="tab-content" id="v-pills-tabContent">
+                            <Component currentUser={currentUser} {...pageProps} />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

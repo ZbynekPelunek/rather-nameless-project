@@ -6,6 +6,18 @@ interface CharacterAttrs {
     characterClass: string;
     characterLevel: number;
     userId: string;
+
+    statsPrimaryAgility: number;
+    statsPrimaryStrength: number;
+    statsPrimaryIntellect: number;
+    statsPrimaryStamina: number;
+
+    statsBaseHealth?: number;
+    statsBaseResource?: number;
+    statsSecondaryMultristrikeChance?: number;
+    statsSecondaryMultistrikeDamage?: number;
+    statsSecondaryAttackPower?: number;
+    statsSecondarySpellPower?: number;
 }
 
 // An interface that describes the properties that a Character Model has
@@ -19,6 +31,19 @@ interface CharacterDoc extends mongoose.Document {
     characterClass: string;
     characterLevel: number;
     userId: string;
+
+    statsBaseHealth: number;
+    statsBaseResource: number;
+
+    statsPrimaryAgility: number;
+    statsPrimaryStrength: number;
+    statsPrimaryIntellect: number;
+    statsPrimaryStamina: number;
+    
+    statsSecondaryMultristrikeChance: number;
+    statsSecondaryMultistrikeDamage: number;
+    statsSecondaryAttackPower: number;
+    statsSecondarySpellPower: number;
 }
 
 const characterSchema = new mongoose.Schema({
@@ -34,6 +59,62 @@ const characterSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min: 1
+    },
+    statsPrimaryAgility: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    statsPrimaryStrength: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    statsPrimaryIntellect: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    statsPrimaryStamina: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    statsBaseHealth: {
+        type: Number,
+        required: true,
+        min: 1,
+        default: 25
+    },
+    statsBaseResource: {
+        type: Number,
+        required: true,
+        min: 0,
+        default: 0
+    },
+    statsSecondaryMultristrikeChance: {
+        type: Number,
+        required: true,
+        min: 0,
+        default: 5
+    },
+    statsSecondaryMultistrikeDamage: {
+        type: Number,
+        required: true,
+        min: 0,
+        default: 30
+    },
+    statsSecondaryAttackPower: {
+        type: Number,
+        required: true,
+        min: 0,
+        default: 1
+    },
+    statsSecondarySpellPower: {
+        type: Number,
+        required: true,
+        min: 0,
+        default: 1
     },
     userId: {
         type: String,

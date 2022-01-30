@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: character
-        image: zbynekp/character
+        image: zpelunek/character
         env:
           - name: MONGO_URI
             value: 'mongodb://character-mongo-srv:27017/character'

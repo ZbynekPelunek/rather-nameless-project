@@ -31,6 +31,10 @@ describe('GET /api/characters/:id', () => {
             characterName: 'abcdefg',
             characterClass: 'warrior',
             characterLevel: 1,
+            statsPrimaryAgility: 5,
+            statsPrimaryStrength: 4,
+            statsPrimaryIntellect: 3,
+            statsPrimaryStamina: 2,
             userId
         });
         await character.save();

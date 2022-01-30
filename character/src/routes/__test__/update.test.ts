@@ -36,6 +36,10 @@ describe('PUT /api/characters', () => {
             characterName: 'abcdefg',
             characterClass: 'warrior',
             characterLevel: 1,
+            statsPrimaryAgility: 5,
+            statsPrimaryStrength: 4,
+            statsPrimaryIntellect: 3,
+            statsPrimaryStamina: 2,
             userId
         });
         await character.save();
@@ -58,6 +62,10 @@ describe('PUT /api/characters', () => {
             characterName: 'abcdefg',
             characterClass: 'warrior',
             characterLevel: 1,
+            statsPrimaryAgility: 5,
+            statsPrimaryStrength: 4,
+            statsPrimaryIntellect: 3,
+            statsPrimaryStamina: 2,
             userId
         });
         await character.save();
@@ -107,6 +115,10 @@ describe('PUT /api/characters', () => {
             characterName: 'abcdefg',
             characterClass: 'warrior',
             characterLevel: 1,
+            statsPrimaryAgility: 5,
+            statsPrimaryStrength: 4,
+            statsPrimaryIntellect: 3,
+            statsPrimaryStamina: 2,
             userId
         });
         await character.save();

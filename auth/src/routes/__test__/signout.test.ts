@@ -1,12 +1,11 @@
 import request from 'supertest';
 import { app } from '../../app';
 
-jest.useFakeTimers('legacy');
-
 it('clears the cookie after signing out', async () => {
     await request(app)
         .post('/api/users/signup')
         .send({
+            username: 'test',
             email: 'test@test.com',
             password: '123456'
         })

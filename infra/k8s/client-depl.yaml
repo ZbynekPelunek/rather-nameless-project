@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: client
-        image: zbynekp/client
+        image: zpelunek/client
 ---
 apiVersion: v1
 kind: Service

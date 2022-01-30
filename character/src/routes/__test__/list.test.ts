@@ -8,6 +8,10 @@ const createCharacter = async () => {
         characterName: 'abcdefg',
         characterClass: 'warrior',
         characterLevel: 1,
+        statsPrimaryAgility: 5,
+        statsPrimaryStrength: 4,
+        statsPrimaryIntellect: 3,
+        statsPrimaryStamina: 2,
         userId: new mongoose.Types.ObjectId().toHexString()
     });
     await character.save();
